@@ -1,6 +1,9 @@
 package org.information.temple.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +12,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Getter
@@ -19,6 +23,7 @@ import java.time.LocalDateTime;
 public class Temple {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, description = "Auto-generated Temple ID")
     private Long id;
 
     @NotBlank(message = "Primary Temple Name is required")
@@ -51,4 +56,12 @@ public class Temple {
     private boolean isPrasadhamAvailable;
 
     private boolean isAnnadhanamAvailable;
+
+    @CreationTimestamp
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, description = "Timestamp when the temple entry was created")
+    private ZonedDateTime createdDateTime;
+
+    @UpdateTimestamp
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, description = "Timestamp when the temple entry was last updated")
+    private ZonedDateTime updatedDateTime;
 }
