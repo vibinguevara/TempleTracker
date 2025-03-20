@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cef452f6-6829-4cfb-acff-8236ef1ab863" name="Changes" comment="Added initial backend code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/information/temple/config/SwaggerConfig.java" afterDir="false" />
+    <list default="true" id="cef452f6-6829-4cfb-acff-8236ef1ab863" name="Changes" comment="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/information/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/information/TempleInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/information/temple/controller/TempleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/information/temple/controller/TempleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/information/temple/model/Temple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/information/temple/model/Temple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742321703326</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well">
+      <created>1742358938140</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742358938140</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +135,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -187,6 +193,7 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Initial com" />
     <MESSAGE value="Added initial backend code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added initial backend code" />
+    <MESSAGE value="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well" />
   </component>
 </project>
