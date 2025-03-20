@@ -37,4 +37,50 @@ public class TempleServiceImpl implements TempleService {
         LocalDate endOfDay = LocalDate.from(date.atTime(LocalTime.MAX));    // 23:59:59.999999999
         return templeRepository.findBySpecialPoojaDateTimeBetween(startOfDay, endOfDay);
     }
+
+    @Override
+    public Temple updateTemple(Long id, Temple templeDetails) {
+        Temple existingTemple = templeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Temple not found with id: " + id));
+
+        // Update only the fields that are provided in the request
+        if (templeDetails.getPrimaryTempleName() != null) {
+            existingTemple.setPrimaryTempleName(templeDetails.getPrimaryTempleName());
+        }
+        if (templeDetails.getSecondaryTempleName() != null) {
+            existingTemple.setSecondaryTempleName(templeDetails.getSecondaryTempleName());
+        }
+        if (templeDetails.getStreetAddress() != null) {
+            existingTemple.setStreetAddress(templeDetails.getStreetAddress());
+        }
+        if (templeDetails.getOtherAddress() != null) {
+            existingTemple.setOtherAddress(templeDetails.getOtherAddress());
+        }
+        if (templeDetails.getCity() != null) {
+            existingTemple.setCity(templeDetails.getCity());
+        }
+        if (templeDetails.getState() != null) {
+            existingTemple.setState(templeDetails.getState());
+        }
+        if (templeDetails.getPostalCode() != null) {
+            existingTemple.setPostalCode(templeDetails.getPostalCode());
+        }
+        if (templeDetails.getOfficialEmail() != null) {
+            existingTemple.setOfficialEmail(templeDetails.getOfficialEmail());
+        }
+        if (templeDetails.getOfficialPhone() != null) {
+            existingTemple.setOfficialPhone(templeDetails.getOfficialPhone());
+        }
+        if (templeDetails.getSpecialPoojaDateTime() != null) {
+            existingTemple.setSpecialPoojaDateTime(templeDetails.getSpecialPoojaDateTime());
+        }
+        if (templeDetails.isAnnadhanamAvailable()) {
+            existingTemple.setAnnadhanamAvailable(templeDetails.isAnnadhanamAvailable());
+        }
+        if (templeDetails.isPrasadhamAvailable()) {
+            existingTemple.setPrasadhamAvailable(templeDetails.isPrasadhamAvailable());
+        }
+
+        return templeRepository.save(existingTemple);
+    }
 }

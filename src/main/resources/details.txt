@@ -1,0 +1,7 @@
+Open the Google Login Page:
+
+http://localhost:8080/oauth2/authorization/google
+
+Once logged in, check the stored user data:
+
+GET http://localhost:8080/auth/user
