@@ -42,4 +42,10 @@ public class TempleController {
     public List<Temple> getTemplesBySpecialPooja() {
         return templeService.getTemplesBySpecialPoojaDate(LocalDate.now());
     }
+
+    @PutMapping("/{id}")
+    @Operation(summary = "Update existing temple details", description = "Updates temple details based on the provided ID")
+    public Temple updateTemple(@PathVariable Long id, @RequestBody Temple templeDetails) {
+        return templeService.updateTemple(id, templeDetails);
+    }
 }

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cef452f6-6829-4cfb-acff-8236ef1ab863" name="Changes" comment="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well">
+    <list default="true" id="cef452f6-6829-4cfb-acff-8236ef1ab863" name="Changes" comment="1. Added update api to update the temple details &#10;2. Added google authentication (O Auth mechanism)">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,12 +22,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -109,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742358938140</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1. Added update api to update the temple details &#10;2. Added google authentication (O Auth mechanism)">
+      <created>1742464319036</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742464319036</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,18 +151,7 @@
             <State>
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
-                  <entry key="Show.Git.Branches" value="false" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
+                  <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
             </State>
@@ -194,6 +197,7 @@
     <MESSAGE value="Initial com" />
     <MESSAGE value="Added initial backend code" />
     <MESSAGE value="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Added swagger support for the api - swagger can be opened at http://localhost:8080/swagger-ui.html&#10;2. Added created_timestamp and updated_timestamp in the model to take current time stamp with time zone.&#10;3. ID of the temple were not auto generated, added the code to make it auto generated as well" />
+    <MESSAGE value="1. Added update api to update the temple details &#10;2. Added google authentication (O Auth mechanism)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Added update api to update the temple details &#10;2. Added google authentication (O Auth mechanism)" />
   </component>
 </project>
