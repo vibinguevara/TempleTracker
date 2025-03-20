@@ -10,4 +10,6 @@ public interface TempleService {
     Temple getTempleById(Long id);
     Temple saveTemple(Temple temple);
     List<Temple> getTemplesBySpecialPoojaDate(LocalDate date);
+
+    Temple updateTemple(Long id, Temple templeDetails);
 }
