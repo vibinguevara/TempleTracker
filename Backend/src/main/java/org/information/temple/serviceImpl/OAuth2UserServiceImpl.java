@@ -1,6 +1,6 @@
-package org.information.temple.security;
+package org.information.temple.serviceImpl;
 
-import org.information.temple.model.AuthProvider;
+import org.information.temple.enums.AuthProvider;
 import org.information.temple.model.User;
 import org.information.temple.repository.UserRepository;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -23,12 +23,12 @@ public class OAuth2UserServiceImpl implements OAuth2UserService<OAuth2UserReques
     public OAuth2UserServiceImpl(UserRepository userRepository) {
 
         this.userRepository = userRepository;
-        System.out.println("🟢 OAuth2UserServiceImpl Constructor Called!");
+        System.out.println("OAuth2UserServiceImpl Constructor Called!");
     }
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        System.out.println("🟢 OAuth2UserServiceImpl is running!");
+        System.out.println("OAuth2UserServiceImpl is running!");
         OAuth2User oAuth2User = new DefaultOAuth2UserService().loadUser(userRequest);
         Map<String, Object> attributes = oAuth2User.getAttributes();
 
@@ -38,28 +38,34 @@ public class OAuth2UserServiceImpl implements OAuth2UserService<OAuth2UserReques
         String name = (String) attributes.get("name");
         String picture = (String) attributes.get("picture");
         String googleId = (String) attributes.get("sub");
-        System.out.println("OAuth User Info: " + attributes); // Debugging line
+        System.out.println("OAuth User Info: " + attributes);
+
         // Additional user details (if available)
-        String birthdate = (String) attributes.get("birthdate");  // Needs user.birthday.read scope
-        String phoneNumber = (String) attributes.get("phoneNumber");  // Needs user.phonenumbers.read scope
-        Map<String, Object> address = (Map<String, Object>) attributes.get("address"); // Needs user.addresses.read scope
+        /*
+        String birthdate = (String) attributes.get("birthdate");
+        String phoneNumber = (String) attributes.get("phoneNumber");
+        Map<String, Object> address = (Map<String, Object>) attributes.get("address");
+        */
 
         // Check if the user already exists
         User user = userRepository.findByEmail(email).orElse(new User());
         boolean isNewUser = user.getId() == null;
 
-        //User user = userRepository.findByEmail(email).orElse(new User());
         user.setEmail(email);
         user.setName(name);
         user.setPicture(picture);
         user.setProvider(AuthProvider.GOOGLE);
         user.setProviderId(googleId);
+
+
         // Set additional fields
+        /*
         user.setBirthdate(birthdate);
         user.setPhoneNumber(phoneNumber);
         if (address != null) {
             user.setAddress(address.toString()); // Convert to JSON string if necessary
         }
+        */
 
         userRepository.save(user);
         if (isNewUser) {

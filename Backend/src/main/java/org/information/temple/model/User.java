@@ -2,8 +2,11 @@ package org.information.temple.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.information.temple.enums.AuthProvider;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,10 +22,20 @@ public class User {
 
     private String name;
 
-    private String picture; // Profile picture URL from Google
+    private String picture;
 
     @Enumerated(EnumType.STRING)
     private AuthProvider provider;
 
-    private String providerId; // Google User ID
+    private String providerId;
+
+    // One user can create multiple temples
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Temple> temples = new ArrayList<>();
+
+    /*
+        private String birthdate;  // New field
+        private String phoneNumber; // New field
+        private String address;  // New field (store as JSON or string)
+    */
 }

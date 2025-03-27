@@ -1,12 +1,14 @@
 package org.information.temple.config;
 
-import org.information.temple.security.OAuth2UserServiceImpl;
+import org.information.temple.serviceImpl.OAuth2UserServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig {
     private final OAuth2UserServiceImpl oAuth2UserService;
 
@@ -16,6 +18,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        System.out.println("🚀 SecurityConfig Loaded!");
         http
                 .csrf().disable()
                 .authorizeRequests()
@@ -27,5 +30,7 @@ public class SecurityConfig {
                 .userService(oAuth2UserService);
 
         return http.build();
+
     }
+
 }
