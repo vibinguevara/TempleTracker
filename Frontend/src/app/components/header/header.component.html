@@ -1,0 +1,23 @@
+<header class="header">
+    <div class="container">
+        <h1 class="logo">Temple Tracker</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a routerLink="/action">Take Action <span class="dropdown-icon">▼</span></a>
+                </li>
+                <li><a routerLink="/about">About Us</a></li>
+                <li class="auth-links">
+                    <!-- Show Sign In if user is NOT logged in -->
+                    <a *ngIf="!user" (click)="login()">Sign in</a>
+
+                    <!-- Show User Profile Image if logged in -->
+                    <img *ngIf="user" [src]="user.photoURL" alt="User" class="user-photo" (click)="logout()">
+
+                    <span class="divider">|</span>
+                    <button class="give-btn">Give ?</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

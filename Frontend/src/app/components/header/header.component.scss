@@ -1,0 +1,65 @@
+.header {
+    background: #FFA54F;
+    /* Lighter shade of saffron */
+    color: black;
+    padding: 15px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        margin-left: 5px;
+        /* Move closer to margin */
+        font-size: 2.0rem;
+        /* Reduce font size */
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    nav ul li {
+        display: flex;
+        align-items: center;
+    }
+    nav ul li a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    .dropdown-icon {
+        margin-left: 5px;
+        font-size: 0.8rem;
+    }
+    .auth-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .divider {
+        margin: 0 5px;
+        font-weight: bold;
+    }
+    .give-btn {
+        background: yellow;
+        border: none;
+        padding: 5px 15px;
+        cursor: pointer;
+        border-radius: 20px;
+        /* Rounded edges */
+        font-weight: bold;
+        /* Make text bold */
+        display: flex;
+        align-items: center;
+    }
+    .user-photo {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}

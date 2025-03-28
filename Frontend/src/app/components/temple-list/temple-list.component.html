@@ -1,11 +1,13 @@
-<div class="container">
-    <h2>Temples with Special Poojas</h2>
-    <div *ngFor="let temple of temples" class="card my-3">
-        <div class="card-body">
-            <h5 class="card-title">{{ temple.primaryTempleName }}</h5>
-            <p class="card-text">Location: {{ temple.city }}, {{ temple.state }}</p>
-            <p class="card-text">Special Pooja: {{ temple.specialPoojaDateTime }}</p>
-            <a [routerLink]="['/temple', temple.id]" class="btn btn-primary">View Details</a>
-        </div>
+<div class="temple-list-container">
+    <!--<h2>Temples with Special Poojas</h2>-->
+    <div class="search-bar">
+        <input type="text" placeholder="Search" />
+        <button>Search</button>
+    </div>
+    <div *ngFor="let temple of temples" class="temple-card">
+        <h5>{{ temple.primaryTempleName }}</h5>
+        <p>Location: {{ temple.city }}, {{ temple.state }}</p>
+        <p>Special Pooja Time: {{ temple.specialPoojaDateTime }}</p>
+        <a [routerLink]="['/temple', temple.id]" class="more-details">More Details</a>
     </div>
 </div>

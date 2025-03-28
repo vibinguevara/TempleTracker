@@ -1,0 +1,27 @@
+.footer {
+    background: #FFA54F;
+    /* Same lighter saffron as header */
+    padding: 15px 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .copyright {
+        margin-left: 10px;
+        /* Move text to left corner */
+        font-size: 0.9rem;
+    }
+    .footer-links {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        margin-right: 10px;
+        /* Move links to right corner */
+    }
+    .footer-links li a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
