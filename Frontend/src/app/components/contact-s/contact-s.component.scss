@@ -1,0 +1,32 @@
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    h1 {
+        font-size: 2.2rem;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
+    }
+    .contact-details {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        a {
+            color: #007bff;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .map-container {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}

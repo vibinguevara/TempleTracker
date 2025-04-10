@@ -10,9 +10,10 @@
                 <li class="auth-links">
                     <!-- Show Sign In if user is NOT logged in -->
                     <a *ngIf="!user" (click)="login()">Sign in</a>
-
+                    <!-- Hidden Google Sign-In button that will be rendered by Google Identity Services -->
+                    <div id="googleSignInButton" style="display: none;"></div>
                     <!-- Show User Profile Image if logged in -->
-                    <img *ngIf="user" [src]="user.photoURL" alt="User" class="user-photo" (click)="logout()">
+                    <img *ngIf="user" [src]="user.picture || user.photoURL" alt="User" class="user-photo" (click)="logout()" />
 
                     <span class="divider">|</span>
                     <button class="give-btn">Give ?</button>

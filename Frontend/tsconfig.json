@@ -15,7 +15,11 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/app/types"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

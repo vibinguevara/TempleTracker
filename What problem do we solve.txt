@@ -1,0 +1,31 @@
+Phase 1 problem :
+
+Every streets of India is filled with temples and something special frequently happens on those temples. Many people know the special pooja timings of bigger temples around India but what about the smaller temples or the temple at the corner of the street?. 
+
+The house at the end of the street of the temple itself won't know it. The idea of this project is to acknowledge and appreciate the smaller temples. Gods in smaller temple is equally powerful as gods in bigger temple. God is always powerful irrespective of the size of temple.
+
+This web & mobile app allows the user / devotees of any temple to mention the important special poojas, ceremonies etc. happening on temples in every nook and corner of India.
+
+Note: We cautiously named it "Temple Tracker" because, the word "temple" is not exclusively used for Hindu places of worship. This application is religion agnostic.
+
+Special instructions / importance of the pooja will also be entered by the devotees as well.
+
+Phase 2 Problem:
+
+Older people loves community gathering in the temples. They wanted to recite hauman chalisa, lakshmi sahasranamam etc and they can post a event like "who wants to join with me today at 7.pm at this temple to chant hanuman chalisa" and interested people can register on the event.
+
+This will re-build the oldschool community gathering in temple and also give a earning to poojaris in small temple whose lively hood is heavily dependent on it.
+
+Phase 3 Problem:
+
+How often we have prayed god that we will deposit a money once a wish is granted and once what we wished came true, we never got a chance to visit the temple due to various reason and we never deposited that money?
+
+We have phase 3 development that solves this problem. Any devotee can login to the application search for the particular temple and find their QR code and pay money digitally.
+
+Again, nothing is gained by templetracker here. Whatever the platform fee is taken that will be there. Temple tracker wont take a single penny that is suppose to go to gods.
+
+Phase 4 Problem:
+
+The Name itself is called "Temple Tracker" - there is a sperate domain where each small temple will be digitally recorded, like where is the geo location of the temple x?, who contributed the land for the temple?, how much sq.ft the land is?, who built it, when it was built?, who were doing poojas on the temple ? etc. It digitally tracks the temple land and idols.
+
+This is very important feature because it will prevent encroaching temple land in future also reduce idol thefts from happening.
