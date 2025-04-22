@@ -1,7 +1,8 @@
 <div class="temple-list-container">
     <div class="search-bar">
-        <input type="text" placeholder="Search" />
-        <button>Search</button>
+        <!--<input type="text" placeholder="Search" />
+        <button>Search</button>-->
+        <input type="text" [(ngModel)]="searchText" (input)="searchTemples()" placeholder="Search by name, city, state, or zip" />
     </div>
 
     <div *ngFor="let temple of temples" class="temple-card">

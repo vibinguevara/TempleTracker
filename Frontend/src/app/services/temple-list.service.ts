@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class TempleListService {
 
-  private apiUrl = 'http://localhost:8080/api/temples/paginated';
+  private apiUrl = 'http://localhost:8080/api/temples/';
 
   constructor(private http: HttpClient) {}
 
   getPaginatedTemples(page: number, size: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}?page=${page}&size=${size}`);
+    return this.http.get(`${this.apiUrl}paginated?page=${page}&size=${size}`);
   }
 
   getTempleById(id: number): Observable<any> {
@@ -26,4 +26,9 @@ export class TempleListService {
   updateTemple(id: number, temple: any): Observable<any> {
     return this.http.put<any>(`http://localhost:8080/api/temples/${id}`, temple);
   }
+
+  searchTemples(keyword: string, page: number, size: number): Observable<any> {
+  return this.http.get(`${this.apiUrl}search?keyword=${keyword}&page=${page}&size=${size}`);
+}
+
 }

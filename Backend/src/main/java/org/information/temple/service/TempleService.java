@@ -16,4 +16,6 @@ public interface TempleService {
 
     // New method for paginated results
     Page<Temple> getPaginatedTemples(int page, int size);
+
+    Page<Temple> searchTemples(String keyword, int page, int size);
 }

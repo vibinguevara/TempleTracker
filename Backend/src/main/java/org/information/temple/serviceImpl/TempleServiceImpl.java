@@ -95,4 +95,10 @@ public class TempleServiceImpl implements TempleService {
         }
         return templeRepository.save(existingTemple);
     }
+
+    @Override
+    public Page<Temple> searchTemples(String keyword, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id").ascending());
+        return templeRepository.searchTemples(keyword, pageable);
+    }
 }

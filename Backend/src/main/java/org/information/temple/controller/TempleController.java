@@ -58,4 +58,13 @@ public class TempleController {
             @RequestParam(defaultValue = "10") int size) {
         return ResponseEntity.ok(templeService.getPaginatedTemples(page, size));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<Page<Temple>> searchTemples(
+            @RequestParam String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        return ResponseEntity.ok(templeService.searchTemples(keyword, page, size));
+    }
 }
