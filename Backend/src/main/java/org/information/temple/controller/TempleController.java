@@ -5,6 +5,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.information.temple.model.Temple;
 import org.information.temple.service.TempleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -47,5 +49,22 @@ public class TempleController {
     @Operation(summary = "Update existing temple details", description = "Updates temple details based on the provided ID")
     public Temple updateTemple(@PathVariable Long id, @RequestBody Temple templeDetails) {
         return templeService.updateTemple(id, templeDetails);
+    }
+
+    // GET paginated temples
+    @GetMapping("/paginated")
+    public ResponseEntity<Page<Temple>> getPaginatedTemples(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        return ResponseEntity.ok(templeService.getPaginatedTemples(page, size));
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<Page<Temple>> searchTemples(
+            @RequestParam String keyword,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        return ResponseEntity.ok(templeService.searchTemples(keyword, page, size));
     }
 }
