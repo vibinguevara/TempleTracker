@@ -1,13 +1,25 @@
 <div class="temple-list-container">
-    <!--<h2>Temples with Special Poojas</h2>-->
     <div class="search-bar">
         <input type="text" placeholder="Search" />
         <button>Search</button>
     </div>
+
     <div *ngFor="let temple of temples" class="temple-card">
-        <h5>{{ temple.primaryTempleName }}</h5>
-        <p>Location: {{ temple.city }}, {{ temple.state }}</p>
-        <p>Special Pooja Time: {{ temple.specialPoojaDateTime }}</p>
+        <div class="temple-info">
+            <h5>{{ temple.primaryTempleName }}</h5>
+            <div class="temple-meta">
+                <p><strong>Locality:</strong> {{ temple.otherAddress }}</p>
+                <p><strong>City:</strong> {{ temple.cityAddress }}</p>
+                <p><strong>State:</strong> {{ temple.stateAddress }}</p>
+                <p><strong>Zip Code:</strong> {{ temple.postalCodeAddress }}</p>
+                <p><strong>Governed By:</strong> {{ temple.stateGoverned ? 'State' : 'Private' }}</p>
+            </div>
+        </div>
         <a [routerLink]="['/temple', temple.id]" class="more-details">More Details</a>
+    </div>
+
+    <div class="pagination-buttons">
+        <button (click)="previousPage()" [disabled]="page === 0">Previous</button>
+        <button (click)="nextPage()">Next</button>
     </div>
 </div>

@@ -29,20 +29,20 @@ public class Temple {
 
     private String secondaryTempleName;
 
-    @NotBlank(message = "Street Address is required")
+  //  @NotBlank(message = "Street Address is required")
     private String streetAddress;
 
-    @NotBlank(message = "Other Address is required")
+   // @NotBlank(message = "Other Address is required")
     private String otherAddress;
 
     @NotBlank(message = "City is required")
-    private String city;
+    private String cityAddress;
 
     @NotBlank(message = "State is required")
-    private String state;
+    private String stateAddress;
 
     @NotBlank(message = "Postal Code is required")
-    private String postalCode;
+    private String postalCodeAddress;
 
     @Email(message = "Invalid email format")
     private String officialEmail;
@@ -54,6 +54,9 @@ public class Temple {
     private boolean isPrasadhamAvailable;
 
     private boolean isAnnadhanamAvailable;
+
+    private boolean isStateGoverned;
+    private String jurisdictionOfficer;
 
     @CreationTimestamp
     @Schema(accessMode = Schema.AccessMode.READ_ONLY, description = "Timestamp when the temple entry was created")
