@@ -1,0 +1,82 @@
+<div class="add-temple-container">
+    <h2>Add New Temple</h2>
+    <form [formGroup]="templeForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="primaryTempleName">Primary Temple Name*</label>
+            <input type="text" id="primaryTempleName" formControlName="primaryTempleName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="secondaryTempleName">Secondary Temple Name</label>
+            <input type="text" id="secondaryTempleName" formControlName="secondaryTempleName">
+        </div>
+
+        <div class="form-group">
+            <label for="streetAddress">Street Address*</label>
+            <input type="text" id="streetAddress" formControlName="streetAddress" required>
+        </div>
+
+        <div class="form-group">
+            <label for="otherAddress">Other Address</label>
+            <input type="text" id="otherAddress" formControlName="otherAddress">
+        </div>
+
+        <div class="form-group">
+            <label for="cityAddress">City*</label>
+            <input type="text" id="cityAddress" formControlName="cityAddress" required>
+        </div>
+
+        <div class="form-group">
+            <label for="stateAddress">State*</label>
+            <input type="text" id="stateAddress" formControlName="stateAddress" required>
+        </div>
+
+        <div class="form-group">
+            <label for="postalCodeAddress">Postal Code*</label>
+            <input type="text" id="postalCodeAddress" formControlName="postalCodeAddress" required>
+        </div>
+
+        <div class="form-group">
+            <label for="officialEmail">Official Email</label>
+            <input type="email" id="officialEmail" formControlName="officialEmail">
+        </div>
+
+        <div class="form-group">
+            <label for="officialPhone">Official Phone</label>
+            <input type="tel" id="officialPhone" formControlName="officialPhone">
+        </div>
+
+        <div class="form-group">
+            <label for="specialPoojaDateTime">Special Pooja Date & Time</label>
+            <input type="datetime-local" id="specialPoojaDateTime" formControlName="specialPoojaDateTime">
+        </div>
+
+        <div class="form-group">
+            <label for="jurisdictionOfficer">Jurisdiction Officer</label>
+            <input type="text" id="jurisdictionOfficer" formControlName="jurisdictionOfficer">
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" formControlName="stateGoverned"> State Governed
+            </label>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" formControlName="annadhanamAvailable"> Annadhanam Available
+            </label>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+                <input type="checkbox" formControlName="prasadhamAvailable"> Prasadham Available
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" [disabled]="!templeForm.valid">Submit</button>
+            <button type="button" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>

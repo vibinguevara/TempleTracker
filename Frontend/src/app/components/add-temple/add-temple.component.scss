@@ -1,0 +1,81 @@
+.add-temple-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+    .form-group {
+        margin-bottom: 1.5rem;
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            &:focus {
+                outline: none;
+                border-color: #4a90e2;
+                box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+            }
+        }
+    }
+    .checkbox-group {
+        label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            input[type="checkbox"] {
+                width: 1.2rem;
+                height: 1.2rem;
+            }
+        }
+    }
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 2rem;
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            &[type="submit"] {
+                background-color: #4a90e2;
+                color: white;
+                &:hover {
+                    background-color: #357abd;
+                }
+                &:disabled {
+                    background-color: #ccc;
+                    cursor: not-allowed;
+                }
+            }
+            &[type="button"] {
+                background-color: #f5f5f5;
+                color: #333;
+                &:hover {
+                    background-color: #e0e0e0;
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,14 @@
 <header class="header">
     <div class="container">
-        <h1 class="logo">Temple Tracker</h1>
+        <h1 class="logo"><a href="/">Temple Tracker</a></h1>
         <nav>
             <ul>
-                <li>
+                <li class="dropdown">
                     <a routerLink="/action">Take Action <span class="dropdown-icon">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/add-temple">Add New Temple</a></li>
+                        <!-- Add other dropdown items here -->
+                    </ul>
                 </li>
                 <li><a href="/about-us" target="_blank">About Us</a></li>
                 <li class="auth-links">

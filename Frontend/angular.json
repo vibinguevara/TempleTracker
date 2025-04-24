@@ -27,8 +27,7 @@
                         "inlineStyleLanguage": "scss",
                         "assets": [{
                             "glob": "**/*",
-                            "input": "src/assets",
-                            "output": "/assets"
+                            "input": "public"
                         }],
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -94,8 +93,7 @@
                         "inlineStyleLanguage": "scss",
                         "assets": [{
                             "glob": "**/*",
-                            "input": "src/assets",
-                            "output": "/assets"
+                            "input": "public"
                         }],
                         "styles": [
                             "src/styles.scss"

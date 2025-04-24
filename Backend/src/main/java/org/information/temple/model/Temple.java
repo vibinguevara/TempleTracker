@@ -1,6 +1,7 @@
 package org.information.temple.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -71,4 +72,20 @@ public class Temple {
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnore
     private User user;
+
+    // Add this getter to handle the userId in JSON
+    @JsonProperty("userId")
+    public Long getUserId() {
+        return user != null ? user.getId() : null;
+    }
+
+    // Add this setter to handle the userId in JSON
+    @JsonProperty("userId")
+    public void setUserId(Long userId) {
+        if (userId != null) {
+            User user = new User();
+            user.setId(userId);
+            this.user = user;
+        }
+    }
 }
