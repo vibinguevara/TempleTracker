@@ -1,7 +1,9 @@
 package org.information.temple.serviceImpl;
 
 import org.information.temple.model.Temple;
+import org.information.temple.model.User;
 import org.information.temple.repository.TempleRepository;
+import org.information.temple.repository.UserRepository;
 import org.information.temple.service.TempleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +20,9 @@ public class TempleServiceImpl implements TempleService {
     @Autowired
     private TempleRepository templeRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public List<Temple> getAllTemples() {
         return templeRepository.findAll();
@@ -28,8 +33,27 @@ public class TempleServiceImpl implements TempleService {
         return templeRepository.findById(id).orElse(null);
     }
 
+    /*@Override
+    public Temple saveTemple(Temple temple) {
+        return templeRepository.save(temple);
+    }*/
+
     @Override
     public Temple saveTemple(Temple temple) {
+        // Get the user ID from the temple object
+        Long userId = temple.getUser() != null ? temple.getUser().getId() : null;
+
+        if (userId == null) {
+            throw new IllegalArgumentException("User ID is required");
+        }
+
+        // Fetch the user from the database
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
+
+        // Set the user on the temple
+        temple.setUser(user);
+
         return templeRepository.save(temple);
     }
 
