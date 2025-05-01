@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'temple-tracker-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
 })
 export class HeaderComponent implements OnInit {
   user: any = null;

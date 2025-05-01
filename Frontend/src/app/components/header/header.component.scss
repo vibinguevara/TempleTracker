@@ -92,4 +92,16 @@
             }
         }
     }
+    .logo-link {
+        text-decoration: none;
+        color: inherit;
+        font-family: 'Georgia', serif;
+        font-weight: bold;
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+        &:hover {
+            color: #222;
+            text-decoration: none;
+        }
+    }
 }

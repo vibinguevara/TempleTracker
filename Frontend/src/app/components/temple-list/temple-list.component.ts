@@ -1,3 +1,4 @@
+// temple-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { RouterModule } from '@angular/router'; 
@@ -7,18 +8,18 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'temple-tracker-list',
   templateUrl: './temple-list.component.html',
-  styleUrl: './temple-list.component.scss',
+  styleUrls: ['./temple-list.component.scss'],
   standalone: true,
-  imports:[RouterModule,CommonModule,FormsModule]
+  imports: [RouterModule, CommonModule, FormsModule]
 })
-
 export class TempleListComponent implements OnInit {
   temples: any[] = [];
   page: number = 0;
   size: number = 10;
   searchText: string = '';
-isSearching: boolean = false;
-err: any;
+  isSearching: boolean = false;
+  selectedTemple: any = null;
+  err: any;
 
   constructor(private templeService: TempleListService) {}
 
@@ -44,20 +45,19 @@ err: any;
     }
   }
 
-  
   searchTemples(): void {
     const keyword = this.searchText?.trim();
-  
+
     if (!keyword) {
       this.isSearching = false;
       this.loadTemples();
       return;
     }
-  
+
     this.isSearching = true;
-  
+
     this.templeService.searchTemples(keyword, this.page, this.size).subscribe({
-      next: response => {
+      next: (response: any) => {
         this.temples = response.content;
       },
       error: (err: any) => {
@@ -66,6 +66,19 @@ err: any;
       }
     });
   }
-  
-  
+
+  openDetailsPopup(id: number): void {
+    this.templeService.getTempleById(id).subscribe({
+      next: (temple: any) => {
+        this.selectedTemple = temple;
+      },
+      error: (err: any) => {
+        console.error('Failed to fetch temple details:', err);
+      }
+    });
+  }
+
+  closeDetailsPopup(): void {
+    this.selectedTemple = null;
+  }
 }
