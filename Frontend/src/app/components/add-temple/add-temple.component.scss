@@ -1,81 +1,177 @@
 .add-temple-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     h2 {
+        color: #2c3e50;
         text-align: center;
         margin-bottom: 2rem;
-        color: #333;
-    }
-    .form-group {
-        margin-bottom: 1.5rem;
-        label {
+        font-size: 2rem;
+        font-weight: 600;
+        position: relative;
+        &:after {
+            content: '';
             display: block;
+            width: 60px;
+            height: 4px;
+            background: #4a90e2;
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+    }
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        .form-group {
             margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #555;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="datetime-local"] {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            &:focus {
-                outline: none;
-                border-color: #4a90e2;
-                box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: #34495e;
+                font-weight: 500;
+                font-size: 0.95rem;
+                &::after {
+                    content: '*';
+                    color: #e74c3c;
+                    margin-left: 4px;
+                    display: none;
+                }
+            }
+            &.required label::after {
+                display: inline;
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="datetime-local"] {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border: 1.5px solid #dce4ec;
+                border-radius: 8px;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                background-color: #f8fafc;
+                &:hover {
+                    border-color: #bdc3c7;
+                }
+                &:focus {
+                    outline: none;
+                    border-color: #4a90e2;
+                    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+                    background-color: #ffffff;
+                }
+            }
+            &.checkbox-group {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+                input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #bdc3c7;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    &:checked {
+                        background-color: #4a90e2;
+                        border-color: #4a90e2;
+                    }
+                }
+                label {
+                    margin: 0;
+                    cursor: pointer;
+                }
             }
         }
-    }
-    .checkbox-group {
-        label {
+        .form-actions {
+            grid-column: 1 / -1;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            input[type="checkbox"] {
-                width: 1.2rem;
-                height: 1.2rem;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+            button {
+                padding: 0.75rem 1.5rem;
+                border: none;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                &[type="submit"] {
+                    background-color: #4a90e2;
+                    color: white;
+                    &:hover {
+                        background-color: #357abd;
+                        transform: translateY(-1px);
+                    }
+                    &:disabled {
+                        background-color: #bdc3c7;
+                        cursor: not-allowed;
+                        transform: none;
+                    }
+                }
+                &[type="button"] {
+                    background-color: #f5f6f7;
+                    color: #2c3e50;
+                    &:hover {
+                        background-color: #e1e4e6;
+                    }
+                }
             }
         }
     }
-    .form-actions {
+    .error-message {
+        grid-column: 1 / -1;
+        color: #e74c3c;
+        background-color: #fdf3f2;
+        padding: 1rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
         display: flex;
-        justify-content: flex-end;
-        gap: 1rem;
-        margin-top: 2rem;
-        button {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            &[type="submit"] {
-                background-color: #4a90e2;
-                color: white;
-                &:hover {
-                    background-color: #357abd;
-                }
-                &:disabled {
-                    background-color: #ccc;
-                    cursor: not-allowed;
-                }
-            }
-            &[type="button"] {
-                background-color: #f5f5f5;
-                color: #333;
-                &:hover {
-                    background-color: #e0e0e0;
+        align-items: center;
+        gap: 0.5rem;
+        &::before {
+            content: '⚠';
+        }
+    }
+    @media (max-width: 768px) {
+        margin: 1rem;
+        padding: 1.5rem;
+        form {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            .form-actions {
+                flex-direction: column;
+                button {
+                    width: 100%;
                 }
             }
         }
     }
+}
+
+// Animations for form feedback
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.ng-invalid.ng-touched {
+    border-color: #e74c3c !important;
+    animation: shake 0.3s ease-in-out;
 }

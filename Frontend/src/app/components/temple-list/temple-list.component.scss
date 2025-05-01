@@ -1,7 +1,8 @@
 .temple-list-container {
     padding: 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .search-bar {
@@ -10,24 +11,20 @@
     margin-bottom: 20px;
     input {
         width: 60%;
-        padding: 8px;
-        margin-right: 10px;
+        padding: 10px;
         border: 1px solid #ccc;
-    }
-    button {
-        padding: 8px 15px;
-        background: #ddd;
-        border: none;
-        cursor: pointer;
+        border-radius: 6px;
+        font-size: 14px;
     }
 }
 
 .temple-card {
-    background: #fef8e6;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 15px;
+    background: #fffaf0;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #d4d4d4;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -35,24 +32,52 @@
     .temple-info {
         text-align: left;
         h5 {
-            margin: 0 0 8px;
-            font-size: 18px;
+            margin: 0 0 10px;
+            font-size: 20px;
+            font-weight: 600;
         }
-        .temple-meta {
-            p {
-                margin: 2px 0;
-                font-size: 14px;
-            }
+        .temple-meta p {
+            margin: 4px 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .badge-danger {
+            background: red;
+            color: white;
+            font-size: xx-small;
+        }
+        .badge-primary {
+            background: blue;
+            color: white;
+            font-size: xx-small;
         }
     }
-    .more-details {
-        padding: 8px 12px;
-        background: #dcdcdc;
-        border: 1px solid #aaa;
-        text-decoration: none;
-        border-radius: 5px;
-        height: fit-content;
-        align-self: center;
+    .temple-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 14px;
+            font-size: 13px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: #f3f3f3;
+            cursor: pointer;
+            transition: 0.2s ease;
+            i.material-icons {
+                font-size: 16px;
+            }
+            &:hover {
+                background-color: #e0e0e0;
+            }
+            &.events-btn {
+                background-color: #fff4e5;
+                border-color: #e0c490;
+            }
+        }
     }
 }
 
@@ -63,13 +88,57 @@
     margin-top: 20px;
     button {
         padding: 8px 15px;
-        background: #e2e2e2;
-        border: 1px solid #aaa;
+        background: #f0f0f0;
+        border: 1px solid #bbb;
         border-radius: 5px;
         cursor: pointer;
         &:disabled {
-            background: #ccc;
+            background: #ddd;
             cursor: not-allowed;
         }
+    }
+}
+
+
+/* Details Popup */
+
+.details-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 90%;
+        max-width: 600px;
+        max-height: 80%;
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        transform: translate(-50%, -50%);
+        overflow: auto;
+    }
+    .popup-scroll {
+        max-height: 400px;
+        overflow-y: auto;
+        margin-top: 10px;
+        p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+    }
+    .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #999;
     }
 }

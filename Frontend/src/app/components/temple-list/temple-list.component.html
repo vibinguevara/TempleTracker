@@ -1,26 +1,57 @@
 <div class="temple-list-container">
     <div class="search-bar">
-        <!--<input type="text" placeholder="Search" />
-        <button>Search</button>-->
         <input type="text" [(ngModel)]="searchText" (input)="searchTemples()" placeholder="Search by name, city, state, or zip" />
     </div>
 
     <div *ngFor="let temple of temples" class="temple-card">
         <div class="temple-info">
-            <h5>{{ temple.primaryTempleName }}</h5>
+            <h5>
+                {{ temple.primaryTempleName }}
+                <span *ngIf="temple.stateGoverned" class="badge badge-danger">Indian State Govt</span>
+                <span *ngIf="!temple.stateGoverned" class="badge badge-primary">Private</span>
+            </h5>
             <div class="temple-meta">
                 <p><strong>Locality:</strong> {{ temple.otherAddress }}</p>
                 <p><strong>City:</strong> {{ temple.cityAddress }}</p>
                 <p><strong>State:</strong> {{ temple.stateAddress }}</p>
                 <p><strong>Zip Code:</strong> {{ temple.postalCodeAddress }}</p>
-                <p><strong>Governed By:</strong> {{ temple.stateGoverned ? 'State' : 'Private' }}</p>
+                <!--<div *ngIf="temple.stateGoverned" class="temple-tag">#State Maintained</div>-->
             </div>
         </div>
-        <a [routerLink]="['/temple', temple.id]" class="more-details">More Details</a>
+        <div class="temple-actions">
+            <button class="details-btn" (click)="openDetailsPopup(temple.id)">
+          <span class="material-icons">info</span> More Details
+        </button>
+            <button class="events-btn">
+          <span class="material-icons">event</span> Add Event
+        </button>
+        </div>
     </div>
 
     <div class="pagination-buttons">
         <button (click)="previousPage()" [disabled]="page === 0">Previous</button>
         <button (click)="nextPage()">Next</button>
+    </div>
+
+    <div class="details-popup" *ngIf="selectedTemple">
+        <div class="popup-content">
+            <span class="close-btn" (click)="closeDetailsPopup()">&times;</span>
+            <h3>{{ selectedTemple.primaryTempleName }}</h3>
+            <div class="popup-scroll">
+                <p><strong>Secondary Name:</strong> {{ selectedTemple.secondaryTempleName }}</p>
+                <!--<p><strong>Street Address:</strong> {{ selectedTemple.streetAddress }}</p>
+                <p><strong>Locality:</strong> {{ selectedTemple.otherAddress }}</p>
+                <p><strong>City:</strong> {{ selectedTemple.cityAddress }}</p>
+                <p><strong>State:</strong> {{ selectedTemple.stateAddress }}</p>
+                <p><strong>Postal Code:</strong> {{ selectedTemple.postalCodeAddress }}</p>-->
+                <p><strong>Email:</strong> {{ selectedTemple.officialEmail }}</p>
+                <p><strong>Phone:</strong> {{ selectedTemple.officialPhone }}</p>
+                <!--<p><strong>Special Pooja:</strong> {{ selectedTemple.specialPoojaDateTime }}</p>-->
+                <p><strong>Prasadham:</strong> {{ selectedTemple.prasadhamAvailable ? 'Yes' : 'No' }}</p>
+                <p><strong>Annadhanam:</strong> {{ selectedTemple.annadhanamAvailable ? 'Yes' : 'No' }}</p>
+                <p><strong>Governed By:</strong> {{ selectedTemple.stateGoverned ? 'State' : 'Private' }}</p>
+                <p><strong>Jurisdiction Officer:</strong> {{ selectedTemple.jurisdictionOfficer }}</p>
+            </div>
+        </div>
     </div>
 </div>
