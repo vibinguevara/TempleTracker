@@ -33,10 +33,6 @@ public class TempleServiceImpl implements TempleService {
         return templeRepository.findById(id).orElse(null);
     }
 
-    /*@Override
-    public Temple saveTemple(Temple temple) {
-        return templeRepository.save(temple);
-    }*/
 
     @Override
     public Temple saveTemple(Temple temple) {
@@ -102,21 +98,16 @@ public class TempleServiceImpl implements TempleService {
         if (templeDetails.getOfficialPhone() != null) {
             existingTemple.setOfficialPhone(templeDetails.getOfficialPhone());
         }
-        if (templeDetails.getSpecialPoojaDateTime() != null) {
-            existingTemple.setSpecialPoojaDateTime(templeDetails.getSpecialPoojaDateTime());
+        if(templeDetails.getOfficialWebsite()!=null){
+            existingTemple.setOfficialWebsite(templeDetails.getOfficialWebsite());
         }
-        if (templeDetails.isAnnadhanamAvailable()) {
-            existingTemple.setAnnadhanamAvailable(templeDetails.isAnnadhanamAvailable());
-        }
-        if (templeDetails.isStateGoverned()) {
-            existingTemple.setAnnadhanamAvailable(templeDetails.isAnnadhanamAvailable());
+        if(templeDetails.getDeityName()!=null){
+            existingTemple.setDeityName(templeDetails.getDeityName());
         }
         if(templeDetails.getJurisdictionOfficer()!=null){
             existingTemple.setJurisdictionOfficer(templeDetails.getJurisdictionOfficer());
         }
-        if (templeDetails.isPrasadhamAvailable()) {
-            existingTemple.setPrasadhamAvailable(templeDetails.isPrasadhamAvailable());
-        }
+
         return templeRepository.save(existingTemple);
     }
 

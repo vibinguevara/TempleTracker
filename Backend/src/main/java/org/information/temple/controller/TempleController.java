@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -53,6 +52,7 @@ public class TempleController {
 
     // GET paginated temples
     @GetMapping("/paginated")
+    @Operation(summary = "Paginated Temple Details", description = "Get paginated temple details (by default display 10)")
     public ResponseEntity<Page<Temple>> getPaginatedTemples(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -60,6 +60,7 @@ public class TempleController {
     }
 
     @GetMapping("/search")
+    @Operation(summary = "Search Temples", description = "Paginated temple search (by default display 10)")
     public ResponseEntity<Page<Temple>> searchTemples(
             @RequestParam String keyword,
             @RequestParam(defaultValue = "0") int page,

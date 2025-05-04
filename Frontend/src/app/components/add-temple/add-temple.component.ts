@@ -33,11 +33,10 @@ export class AddTempleComponent implements OnInit {
       postalCodeAddress: ['', Validators.required],
       officialEmail: [''],
       officialPhone: [''],
-      specialPoojaDateTime: [''],
+      officialWebsite: [''],
+      deityName: [''],
       jurisdictionOfficer: [''],
-      stateGoverned: [false],
-      annadhanamAvailable: [false],
-      prasadhamAvailable: [false]
+      stateGoverned: [false]
     });
   }
 
