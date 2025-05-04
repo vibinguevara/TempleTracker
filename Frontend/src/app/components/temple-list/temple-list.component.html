@@ -15,7 +15,6 @@
                 <p><strong>City:</strong> {{ temple.cityAddress }}</p>
                 <p><strong>State:</strong> {{ temple.stateAddress }}</p>
                 <p><strong>Zip Code:</strong> {{ temple.postalCodeAddress }}</p>
-                <!--<div *ngIf="temple.stateGoverned" class="temple-tag">#State Maintained</div>-->
             </div>
         </div>
         <div class="temple-actions">
@@ -38,15 +37,8 @@
             <span class="close-btn" (click)="closeDetailsPopup()">&times;</span>
             <h3>{{ selectedTemple.primaryTempleName }}</h3>
             <div class="popup-scroll">
-                <p><strong>Secondary Name:</strong> {{ selectedTemple.secondaryTempleName }}</p>
-                <!--<p><strong>Street Address:</strong> {{ selectedTemple.streetAddress }}</p>
-                <p><strong>Locality:</strong> {{ selectedTemple.otherAddress }}</p>
-                <p><strong>City:</strong> {{ selectedTemple.cityAddress }}</p>
-                <p><strong>State:</strong> {{ selectedTemple.stateAddress }}</p>
-                <p><strong>Postal Code:</strong> {{ selectedTemple.postalCodeAddress }}</p>-->
                 <p><strong>Email:</strong> {{ selectedTemple.officialEmail }}</p>
                 <p><strong>Phone:</strong> {{ selectedTemple.officialPhone }}</p>
-                <!--<p><strong>Special Pooja:</strong> {{ selectedTemple.specialPoojaDateTime }}</p>-->
                 <p><strong>Prasadham:</strong> {{ selectedTemple.prasadhamAvailable ? 'Yes' : 'No' }}</p>
                 <p><strong>Annadhanam:</strong> {{ selectedTemple.annadhanamAvailable ? 'Yes' : 'No' }}</p>
                 <p><strong>Governed By:</strong> {{ selectedTemple.stateGoverned ? 'State' : 'Private' }}</p>

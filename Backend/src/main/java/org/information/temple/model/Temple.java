@@ -10,7 +10,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 @Entity
@@ -30,10 +29,8 @@ public class Temple {
 
     private String secondaryTempleName;
 
-  //  @NotBlank(message = "Street Address is required")
     private String streetAddress;
 
-   // @NotBlank(message = "Other Address is required")
     private String otherAddress;
 
     @NotBlank(message = "City is required")
@@ -50,11 +47,9 @@ public class Temple {
 
     private String officialPhone;
 
-    private LocalDateTime specialPoojaDateTime;
+    private String officialWebsite;
 
-    private boolean isPrasadhamAvailable;
-
-    private boolean isAnnadhanamAvailable;
+    private String deityName;
 
     private boolean isStateGoverned;
     private String jurisdictionOfficer;

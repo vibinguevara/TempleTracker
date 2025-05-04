@@ -1,12 +1,15 @@
 package org.information.temple.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.information.temple.enums.AuthProvider;
 
 import javax.persistence.*;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,13 +36,12 @@ public class User {
 
     private String providerId;
 
+    @CreationTimestamp
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY, description = "Timestamp user signed up")
+    private ZonedDateTime createdDateTime;
+
     // One user can create multiple temples
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Temple> temples = new ArrayList<>();
 
-    /*
-        private String birthdate;  // New field
-        private String phoneNumber; // New field
-        private String address;  // New field (store as JSON or string)
-    */
 }
