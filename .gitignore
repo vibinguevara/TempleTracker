@@ -1,3 +1,4 @@
 Backend/src/main/resources/application.yml
 Frontend/src/environments/environments.ts
 Frontend/src/environments/environments.prod.ts
+.idea/

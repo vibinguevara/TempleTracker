@@ -1,0 +1,15 @@
+# ---- Build stage ----
+FROM gradle:8.5.0-jdk21 as build
+#FROM gradle:8.5.0-jdk21
+
+# Set working directory
+WORKDIR /app
+
+# Copy the rest of the source code
+COPY build.gradle settings.gradle /app/
+COPY src /app/src
+
+RUN gradle bootJar -x test || true
+# CMD ["sleep", "infinity"]
+
+

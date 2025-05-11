@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    container_name: dev_db
+    restart: always
+    environment:
+      POSTGRES_DB: templedb
+      POSTGRES_USER: templeDevUser
+      POSTGRES_PASSWORD: templeDevPass
+    ports:
+      - "5432:5432"
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data
+    #   - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  springapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/templedb
+      SPRING_DATASOURCE_USERNAME: templeDevUser
+      SPRING_DATASOURCE_PASSWORD: templeDevPass
+    ports:
+      - "8080:8080"
+    command: sleep infinity
+    volumes:
+      - ..:/workspace:cached
+    container_name: temple-tracker-backend
+
+volumes:
+  pgdata:
