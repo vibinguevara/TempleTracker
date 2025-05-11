@@ -1,26 +1,26 @@
-🐳 How to Run the Dev Container
-✅ Prerequisites
-Install Visual Studio Code and Docker.
+# 🐳 How to Run the Dev Container
+# ✅ Prerequisites
+### Install Visual Studio Code and Docker.
 
-Install the following VSCode extensions:
+### Install the following VSCode extensions:
 
-Dev Containers
+### Dev Containers
 
-Remote - SSH
+### Remote - SSH
 
-Docker Extension
+### Docker Extension
 
-Open the project folder in VSCode.
+### Open the project folder in VSCode.
 
-Click the green "><" icon in the bottom-left corner and select "Reopen in Container."
+### Click the green "><" icon in the bottom-left corner and select "Reopen in Container."
 
-Wait for the container to initialize.
+### Wait for the container to initialize.
 
-This setup will launch:
+### This setup will launch:
 
-PostgreSQL 16
+### PostgreSQL 16
 
-Spring Boot application
+### Spring Boot application
 
 💡 Note: You do not need to install Java, JDK, or Gradle manually — everything is handled within the container.
 
