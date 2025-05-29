@@ -11,8 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -53,12 +51,6 @@ public class TempleServiceImpl implements TempleService {
         return templeRepository.save(temple);
     }
 
-    @Override
-    public List<Temple> getTemplesBySpecialPoojaDate(LocalDate date) {
-        LocalDate startOfDay = LocalDate.from(date.atTime(LocalTime.MIN));
-        LocalDate endOfDay = LocalDate.from(date.atTime(LocalTime.MAX));
-        return templeRepository.findBySpecialPoojaDateTimeBetween(startOfDay, endOfDay);
-    }
 
     @Override
     public Page<Temple> getPaginatedTemples(int page, int size) {
