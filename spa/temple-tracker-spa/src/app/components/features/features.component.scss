@@ -1,0 +1,33 @@
+.features ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    li {
+        margin: 12px 0;
+        position: relative;
+        padding-left: 25px;
+        animation: fadeInUp 0.5s ease both;
+        &:before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #FFA54F;
+        }
+    }
+    h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #FFA54F;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+    }
+}

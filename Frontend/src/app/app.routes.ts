@@ -5,6 +5,7 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { ContactUSComponent } from './components/contact-s/contact-s.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AddTempleComponent } from './components/add-temple/add-temple.component';
+import { AddTempleEventComponent } from './components/add-temple-event/add-temple-event.component';
 
 export const routes: Routes = [
     { path: '', component: TempleListComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
     { path: 'contact-us', component: ContactUSComponent },
     { path: 'about-us', component:AboutUsComponent},
-    { path: 'add-temple', component: AddTempleComponent }
+    { path: 'add-temple', component: AddTempleComponent },
+    { path: ':templeId/add-temple-event', component: AddTempleEventComponent }
 ];

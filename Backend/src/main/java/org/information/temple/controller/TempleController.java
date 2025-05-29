@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -38,11 +37,6 @@ public class TempleController {
         return templeService.saveTemple(temple);
     }
 
-    @GetMapping("/today")
-    @Operation(summary = "Get temples with special pooja", description = "Fetches temples with special pooja on a given date")
-    public List<Temple> getTemplesBySpecialPooja() {
-        return templeService.getTemplesBySpecialPoojaDate(LocalDate.now());
-    }
 
     @PutMapping("/{id}")
     @Operation(summary = "Update existing temple details", description = "Updates temple details based on the provided ID")

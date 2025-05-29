@@ -21,8 +21,8 @@
             <button class="details-btn" (click)="openDetailsPopup(temple.id)">
           <span class="material-icons">info</span> More Details
         </button>
-            <button class="events-btn">
-          <span class="material-icons">event</span> Add Event
+            <button class="events-btn" (click)="navigateToAddEvent(temple.id)">
+            <span class="material-icons">event</span> Add Event
         </button>
         </div>
     </div>
@@ -39,8 +39,8 @@
             <div class="popup-scroll">
                 <p><strong>Email:</strong> {{ selectedTemple.officialEmail }}</p>
                 <p><strong>Phone:</strong> {{ selectedTemple.officialPhone }}</p>
-                <p><strong>Prasadham:</strong> {{ selectedTemple.prasadhamAvailable ? 'Yes' : 'No' }}</p>
-                <p><strong>Annadhanam:</strong> {{ selectedTemple.annadhanamAvailable ? 'Yes' : 'No' }}</p>
+                <p><strong>Website:</strong> {{ selectedTemple.officialWebsite }}</p>
+                <p><strong>DeityName:</strong>{{selectedTemple.deityName}} </p>
                 <p><strong>Governed By:</strong> {{ selectedTemple.stateGoverned ? 'State' : 'Private' }}</p>
                 <p><strong>Jurisdiction Officer:</strong> {{ selectedTemple.jurisdictionOfficer }}</p>
             </div>

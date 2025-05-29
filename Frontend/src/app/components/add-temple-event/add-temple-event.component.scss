@@ -1,0 +1,122 @@
+.add-temple-event-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    .event-count-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        animation: pulse 2s infinite;
+        &.has-events {
+            background-color: #4CAF50;
+            color: white;
+        }
+        &.no-events {
+            background-color: #f44336;
+            color: white;
+        }
+        .material-icons {
+            font-size: 20px;
+        }
+    }
+    .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+    }
+    .form-group {
+        margin-bottom: 20px;
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            &:focus {
+                outline: none;
+                border-color: #4CAF50;
+                box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+            }
+        }
+        &.checkbox-group {
+            label {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+            }
+            input[type="checkbox"] {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+    .button-group {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            .material-icons {
+                font-size: 20px;
+            }
+            &.submit-btn {
+                background-color: #4CAF50;
+                color: white;
+                &:hover {
+                    background-color: #45a049;
+                }
+                &:disabled {
+                    background-color: #cccccc;
+                    cursor: not-allowed;
+                }
+            }
+            &.cancel-btn {
+                background-color: #f44336;
+                color: white;
+                &:hover {
+                    background-color: #da190b;
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router'; 
 import { TempleListService } from '../../services/temple-list.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'temple-tracker-list',
@@ -21,7 +22,8 @@ export class TempleListComponent implements OnInit {
   selectedTemple: any = null;
   err: any;
 
-  constructor(private templeService: TempleListService) {}
+  constructor(private templeService: TempleListService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.loadTemples();
@@ -80,5 +82,9 @@ export class TempleListComponent implements OnInit {
 
   closeDetailsPopup(): void {
     this.selectedTemple = null;
+  }
+
+  navigateToAddEvent(templeId: string) {
+    this.router.navigate([`/${templeId}/add-temple-event`]);
   }
 }

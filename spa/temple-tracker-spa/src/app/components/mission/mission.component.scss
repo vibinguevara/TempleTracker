@@ -1,0 +1,42 @@
+.mission {
+    padding: 80px 20px;
+    text-align: center;
+    h3 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #FFA54F;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+    }
+    p {
+        font-size: 1.1rem;
+        max-width: 900px;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+    ul {
+        max-width: 800px;
+        margin: auto;
+        text-align: left;
+        list-style: none;
+        padding-left: 0;
+        li {
+            margin: 10px 0;
+            padding-left: 1.5rem;
+            position: relative;
+            &::before {
+                content: '✓';
+                position: absolute;
+                left: 0;
+                color: #FFA54F;
+                font-weight: bold;
+            }
+        }
+    }
+}

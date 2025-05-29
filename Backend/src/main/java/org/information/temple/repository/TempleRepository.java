@@ -13,7 +13,6 @@ import java.util.List;
 
 @Repository
 public interface TempleRepository extends JpaRepository<Temple, Long> {
-    List<Temple> findBySpecialPoojaDateTimeBetween(LocalDate start, LocalDate end);
 
     // Paging and sorting support
     Page<Temple> findAll(Pageable pageable);

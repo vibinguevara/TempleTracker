@@ -1,0 +1,47 @@
+.hero {
+    background-image: url('../../../assets/temple.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    overflow: hidden;
+    .content {
+        max-width: 700px;
+        z-index: 2;
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .cta {
+            background: #fff;
+            color: #ffa54f;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            &:hover {
+                background: #fff1dc;
+            }
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+}

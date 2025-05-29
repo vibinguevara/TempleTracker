@@ -1,0 +1,59 @@
+<div class="add-temple-event-container">
+    <div class="event-count-badge" [ngClass]="{'has-events': hasEventsToday, 'no-events': !hasEventsToday}">
+        <span class="material-icons">event</span>
+        <span>{{ eventCountText }}</span>
+    </div>
+
+    <div class="form-container">
+        <h2>Add Temple Event</h2>
+
+        <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="templeType">Temple Type</label>
+                <select id="templeType" formControlName="templeType" class="form-control">
+                    <option value="">Select Temple Type</option>
+                    <option value="ACTUAL_TEMPLE">Actual Temple</option>
+                    <option value="MUTT">Mutt</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="eventName">Special Event Name</label>
+                <input type="text" id="eventName" formControlName="eventName" class="form-control" placeholder="Enter event name">
+            </div>
+
+            <div class="form-group">
+                <label for="eventDescription">Event Description</label>
+                <textarea id="eventDescription" formControlName="eventDescription" class="form-control" rows="4" placeholder="Enter event description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="eventDateTime">Event Date & Time</label>
+                <input type="datetime-local" id="eventDateTime" formControlName="eventDateTime" class="form-control">
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="isFreeMealsAvailable">
+                    Free Meals Available
+                </label>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>
+                    <input type="checkbox" formControlName="isPrasadhamAvailable">
+                    Prasadham Available
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn" [disabled]="!eventForm.valid">
+                    <span class="material-icons">save</span> Submit
+                </button>
+                <button type="button" class="cancel-btn" (click)="resetForm()">
+                    <span class="material-icons">cancel</span> Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
