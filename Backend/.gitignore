@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Storesrc/main/resources/application.yml
+
+### Gradle
+/.gradle/

@@ -1,0 +1,8 @@
+{
+  "name": "Temple Tracker Dev",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "springapp",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8080, 5432],
+  "remoteUser": "root"
+}

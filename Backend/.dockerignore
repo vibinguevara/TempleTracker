@@ -1,0 +1,7 @@
+.idea/
+.gradle/
+build/
+pom.xml
+Dockerfile.copy.dev
+.gitignore
+.devcontainer/
